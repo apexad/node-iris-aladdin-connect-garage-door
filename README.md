@@ -4,9 +4,9 @@ This tool can be used to check the `Status` and `Open`/`Close` an Aladdin Connec
 Aladdin Connect Garage Door must be setup on Iris by Lowe's ([Instructions](http://www.geniecompany.com/data/products/aladdinconnect/iris-programming_aladdin-connect.pdf)).  
 To use:
 ```javascript
-var iris = require('node-iris-aladdin-connect-garage-door');
+var irisGarageDoor = require('node-iris-aladdin-connect-garage-door');
 
-iris.irisGarageDoor(IRIS_USERNAME, IRIS_PASSWORD, ACTION);
+irisGarageDoor(IRIS_USERNAME, IRIS_PASSWORD, ACTION);
 ```
 Parameter       | Description
 ----------------|------------

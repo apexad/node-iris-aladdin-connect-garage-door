@@ -5,7 +5,7 @@ var placeId;
 var cookieData;
 var irisWebSocket;
 
-module.exports.irisGarageDoor = function (iris_user, iris_password, action) {
+module.exports = function (iris_user, iris_password, action) {
   var options = {
     method: 'POST',
     uri: 'https://bc.irisbylowes.com/login',
@@ -52,15 +52,14 @@ module.exports.irisGarageDoor = function (iris_user, iris_password, action) {
       switch (action) {
         case 'open':
           toggleGarageDoor('OPEN');
-          break;
+          return 'opening';
         case 'close':
           toggleGarageDoor('CLOSED');
-          break;
+          return 'closing';
         default:
         case 'status':
-          console.log('Garage Door State: ' + garageDoor['motdoor:doorstate']);
+          return garageDoor['motdoor:doorstate'];
       }
-      //process.exit();
     }
     if (messageData.payload.attributes.places) {
       placeId = messageData.payload.attributes.places[0].placeId;
