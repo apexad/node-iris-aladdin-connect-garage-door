@@ -7,17 +7,17 @@ var irisWebSocket;
 
 module.exports.irisGarageDoor = function (iris_user, iris_password, action) {
   var options = {
-      method: 'POST',
-      uri: 'https://bc.irisbylowes.com/login',
-      form: {
-          user: iris_user,
-          password: iris_password,
-          public: true
-      },
-      headers: {
-          'content-type': 'application/x-www-form-urlencoded'
-      },
-      resolveWithFullResponse: true
+    method: 'POST',
+    uri: 'https://bc.irisbylowes.com/login',
+    form: {
+      user: iris_user,
+      password: iris_password,
+      public: true
+    },
+    headers: {
+      'content-type': 'application/x-www-form-urlencoded'
+    },
+    resolveWithFullResponse: true
   };
 
   function setPlace() {

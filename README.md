@@ -1,14 +1,14 @@
 # Node Iris by Lowe's tool for Aladdin Connect Garage Door
 
 This tool can be used to check the `Status` and `Open`/`Close` an Aladdin Connect Garage Door connected to Iris by Lowe's via a node script.  
-Aladdin Connect Garage Door must be setup on Iris By Lowe's([Instructions](http://www.geniecompany.com/data/products/aladdinconnect/iris-programming_aladdin-connect.pdf)).  
+Aladdin Connect Garage Door must be setup on Iris by Lowe's ([Instructions](http://www.geniecompany.com/data/products/aladdinconnect/iris-programming_aladdin-connect.pdf)).  
 To use:
 ```javascript
 var iris = require('node-iris-aladdin-connect-garage-door');
 
 iris.irisGarageDoor(IRIS_USERNAME, IRIS_PASSWORD, ACTION);
 ```
-Parameter           | Description
+Parameter       | Description
 ----------------|------------
 IRIS_USERNAME   | Your Iris By Lowe's Username (usually an email address)
 IRIS_PASSWORD   | Your Iris By Lowe's Password
