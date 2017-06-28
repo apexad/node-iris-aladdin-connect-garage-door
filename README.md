@@ -19,7 +19,7 @@ IRIS_PASSWORD   | Your Iris By Lowe's Password
 ACTION          | status, open, or close
 callback        | a callback function that runs when the action is runs
 
-The `callback` function runs after the connection to the server and websocket has been made.  
+The `callback` function (added in v0.0.2) runs after the connection to the server and websocket has been made.  
 If `ACTION` was status, it will get CLOSED or OPEN, otherwise it will get OPENING or CLOSING.
 
 ## Limitations
