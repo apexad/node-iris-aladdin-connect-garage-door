@@ -6,13 +6,21 @@ To use:
 ```javascript
 var irisGarageDoor = require('node-iris-aladdin-connect-garage-door');
 
-irisGarageDoor(IRIS_USERNAME, IRIS_PASSWORD, ACTION);
+function callback(text)  {
+  console.log(text);
+}
+
+irisGarageDoor(IRIS_USERNAME, IRIS_PASSWORD, ACTION, callback);
 ```
 Parameter       | Description
 ----------------|------------
 IRIS_USERNAME   | Your Iris By Lowe's Username (usually an email address)
 IRIS_PASSWORD   | Your Iris By Lowe's Password
 ACTION          | status, open, or close
+callback        | a callback function that runs when the action is runs
+
+The `callback` function runs after the connection to the server and websocket has been made.  
+If `ACTION` was status, it will get CLOSED or OPEN, otherwise it will get OPENING or CLOSING.
 
 ## Limitations
 - Not tested with any other garage door controllers connected to Iris, but I assume it should work.
