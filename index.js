@@ -40,6 +40,7 @@ module.exports = function (iris_user, iris_password, action, callback) {
       headers: { destination: garageDoor['base:address'], correlationId: '790525f5-171f-4533-a952-0dcafb9b5310', isRequest: true },
       payload: { messageType: 'base:SetAttributes', attributes: { 'motdoor:doorstate': setGarageState } }
     }));
+    irisWebSocket.close();
   }
 
   function onMessage(messageData) {
@@ -58,10 +59,11 @@ module.exports = function (iris_user, iris_password, action, callback) {
           return callback('CLOSING');
         default:
         case 'status':
+          irisWebSocket.close();
           return callback(garageDoor['motdoor:doorstate']);
       }
     }
-    if (messageData.payload.attributes.places) {
+    if (!placeId && messageData.payload.attributes.places) {
       placeId = messageData.payload.attributes.places[0].placeId;
       setPlace();
     }
