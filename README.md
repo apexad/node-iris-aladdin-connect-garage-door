@@ -32,4 +32,4 @@ Uses Web Socket connections string/syntax information from [Iris Web Portal](htt
 
 ## Home Automation
 This can be used in a home automation program that will run commands to check status, open, and close a garage door.  
-An example use of this in in the `example` folder. This setup has been tested as command `node state.js` with [homebridge-command-garagedoor](https://www.npmjs.com/package/homebridge-garagedoor-command)
+An example use of this in in the `example` folder. This setup has been tested as command `node state.js` with [homebridge-garagedoor-command](https://www.npmjs.com/package/homebridge-garagedoor-command)
