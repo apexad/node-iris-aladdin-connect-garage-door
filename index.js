@@ -5,7 +5,7 @@ var placeId;
 var cookieData;
 var irisWebSocket;
 
-module.exports = function (iris_user, iris_password, action, callback) {
+module.exports = function (iris_user, iris_password, action, callback, deviceName) {
   var options = {
     method: 'POST',
     uri: 'https://bc.irisbylowes.com/login',
@@ -46,7 +46,10 @@ module.exports = function (iris_user, iris_password, action, callback) {
   function onMessage(messageData) {
     if (messageData.headers.correlationId === '6606672e-57f8-47d1-8002-5fe59d34c1d8') {
       messageData.payload.attributes.devices.forEach(function(device) {
-      	if (device['motdoor:doorstate']) {
+        if (
+          device['motdoor:doorstate']
+          && (device['dev:name'] === deviceName || !deviceName)
+        ) {
       	  garageDoor = device;
       	}
       });
