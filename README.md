@@ -1,3 +1,7 @@
+```diff
+- WARNING: As of March 31, 2019 Lowe's Iris was shutdown.
+- This code is left up for historical purposes only.
+```
 # Node Iris by Lowe's tool for Aladdin Connect Garage Door
 
 This tool can be used to check the `status` and `open`/`close` an Aladdin Connect Garage Door connected to Iris by Lowe's via a node script.  
